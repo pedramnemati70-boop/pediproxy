@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "pediproxy",
+  "main": "worker.js",
+  "compatibility_date": "2026-07-30",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    { "binding": "DB","database_id": "88e0ad08-04d5-4a61-880e-6b441fb257ba","database_name": "nova-proxy55" }
+  ],
+  "kv_namespaces": [
+    { "binding": "KV","id": "c7a2d485951a400fb6030a28780e8d17" }
+  ],
+  "vars": {
+    "PAGES_URL": "https://nova-panel.github.io"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.01
+    }
+  }
+}
